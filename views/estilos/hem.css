@@ -1,0 +1,117 @@
+/* 
+    Created on : 31 oct. 2020, 04:59:08
+    Author     : Vega
+*/
+.headerC {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.headerC * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.headerC .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    margin-right: 8px;
+}
+
+.headerC .imgI {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.headerC header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 4px 25px -22px black;
+}
+
+.headerC .logo {
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.headerC .logo h1 a {
+    color: black;
+    font-size: 30px;
+}
+.headerC .logo h1 a b {
+    color: aqua;
+    font-size: 30px;
+}
+
+.headerC .menu {
+    height: 80px;
+    display: flex;
+}
+
+.headerC .menu nav {
+    height: 100%;
+    display: flex;
+}
+
+.headerC .menu nav ul {
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.headerC .menu nav ul li {
+    height: 100%;
+    margin: 0% 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: initial;
+}
+.headerC .menu nav ul li .buscador {
+    width: 280px;
+    height: 40px;
+    border-color: aquamarine;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 20px;
+}
+/* Para paginas especificas
+.menu-selected:before{
+    content: '';
+    width: 100%;
+    height: 4px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+*/
+.headerC .menu nav ul li a {
+    color: #777777;
+    transition: color 300ms;
+}
+
+.headerC .menu nav ul li a:hover {
+    color: red;
+}
+
+.headerC .menu .text-menu-selected {
+    color: red;
+}
+
+
+.headerC .right {
+    margin-right: 180px;
+}
+
+

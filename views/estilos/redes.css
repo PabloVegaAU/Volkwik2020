@@ -1,0 +1,90 @@
+/* 
+    Created on : 31 oct. 2020, 04:59:49
+    Author     : Vega
+*/
+.redes * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+
+.redes img {
+    width: 25px;
+    height: 25px;
+    border-radius: 45%;
+}
+
+.redes .container-icons {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.redes .mostrar {
+    font-size: 100%;
+}
+
+.mostrar img {
+    width: 50px;
+    height: 50px;
+}
+
+.redes .mostrar:hover img {
+    transform: rotate(360deg);
+    transition: all 200ms;
+}
+
+.redes .icon {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 300ms;
+    opacity: 1;
+    padding: 4px;
+}
+
+.redes .icon h5 {
+    transform: translate(-10px, 13px);
+    padding-top: 4%;
+}
+
+.redes .icon label {
+    font-size: 40px;
+    height: 25px;
+}
+
+.container-icons:hover .icon {
+    opacity: 1;
+}
+
+.redes .icon1 {
+    transform: translate(-90px,-35px) scale(0);
+
+}
+
+.redes .icon2 {
+    transform: translate(46px, -62px) scale(0);
+}
+
+.redes .icon3 {
+    transform: translate(-100px, -97px) scale(0);
+}
+
+
+.redes .container-icons:hover .icon1 {
+    transform: translate(-54px, -40px) scale(1);
+
+}
+
+.redes .container-icons:hover .icon2 {
+    transform: translate(-56px, -73px) scale(1);
+
+}
+
+.redes .container-icons:hover .icon3 {
+    transform: translate(-42px, -107px) scale(1);
+
+}
