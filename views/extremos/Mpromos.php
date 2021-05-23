@@ -19,6 +19,7 @@ $listaPromo = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             .Spromos .card {
                 border-radius: 25px;
                 box-shadow: -8px 8px 1px rgba(0, 0, 0, 0.2);
+
             }
 
             .Spromos .card-head {
@@ -36,24 +37,27 @@ $listaPromo = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 /* IE6-9 fallback on horizontal gradient */
                 border-radius: 25px 25px 0 0;
             }
-            .Spromos .card-head h2{padding-top: 24px;font-size: 20px;width: 100%}
+            .Spromos .card-head h2{padding-top: 10px;font-size: 14px;width: 100%;max-height:30px}
             .Spromos .card-logo {
                 border-radius: 50%;
-                width: 45px;
-                margin: 15px;
+                height: 40px;
+                width: 40px;
+                max-width: 40px;
+                max-height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+                margin: 10px 8px 20px 10px;
             }
 
             .Spromos .product-img {
                 position: static;
-                left: 0;
-                margin-top: -1px;
-                width: 180px;
-                height: 170px;
+                margin: 0px 0px 10px 20px;
+                width: 80%;
+                height: 70%;
             }
 
-
             .Spromos .card-body {
-                height: 100px;
+                height: 90px;
                 background: #fff;
                 border-radius: 0 0 25px 25px;
             }
@@ -168,7 +172,8 @@ $listaPromo = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <span class="pan">antes</span>
                             </div>
                         </div>
-                        <form action="" method="POST" align="center">
+                        <div style="padding-bottom: 10px;">
+                            <form action="" method="POST" align="center">
                             <input type="hidden" name="idp" value="<?php echo $producto['IdProducto']; ?>">
                             <input type="hidden" name="nomp" value="<?php echo $producto['Nombres']; ?>">
                             <input type="hidden" name="catp" value="<?php echo $producto['Categoria']; ?>">
@@ -176,9 +181,10 @@ $listaPromo = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <input type="hidden" name="prepp"value="<?php echo $producto['PrecioP']; ?>">
                             <input type="hidden" name="prep" value="<?php echo $producto['Precio']; ?>">
                             <input type="submit"  class="Wow" name="Agregar" value="Agregar al carrito">
-                            <input type="number" style="width: 40px;font-size: 15px" min="1" name="cant" value="0"pattern="^[0-9]+" onKeyPress='if (this.value.length == 2)
+                            <input type="number" style="width: 40px;font-size: 15px" min="1" max="<?php echo $producto['Stock']; ?>"  name="cant" value="0"pattern="^[0-9]+" onKeyPress='if (this.value.length == 2)
                                             return false;' />
                         </form>
+                        </div>
                     </div>
                 </div>
             <?php } ?>

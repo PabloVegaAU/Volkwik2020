@@ -162,7 +162,7 @@ $listaEmpleados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                         </div>
                                         <div class="form-group">
                                             <label>Foto</label>
-                                            <input type="file" accept="image/*" value="<?php echo $fotoe ?>" name="fotoe" class="form-control" required>
+                                            <input type="file" accept="image/*" value="<?php echo $fotoe ?>" name="fotoe" class="form-control">
                                         </div>
                                         <label>Estado</label>
                                         <select class="form-control"  name="este"id="epro" value="<?php echo $este ?>" required>
@@ -192,7 +192,7 @@ $listaEmpleados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <table id="example" class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th hidden>ID</th>
                                 <th>DNI</th>
                                 <th>NOMBRES</th>
                                 <th>USER</th>
@@ -206,7 +206,7 @@ $listaEmpleados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <tbody> 
                             <?php foreach ($listaEmpleados as $empleado) { ?>
                                 <tr>
-                                    <td><?php echo $empleado['IdEmpleado']; ?></td>
+                                    <td hidden><?php echo $empleado['IdEmpleado']; ?></td>
                                     <td><?php echo $empleado['Dni']; ?></td>
                                     <td><?php echo $empleado['Nombres']; ?></td>
                                     <td><?php echo $empleado['User']; ?></td>
@@ -234,7 +234,7 @@ $listaEmpleados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
+                                <th hidden>ID</th>
                                 <th>DNI</th>
                                 <th>NOMBRES</th>
                                 <th>USER</th>

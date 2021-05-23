@@ -5,6 +5,9 @@
     <head>
         <meta charset="UTF-8" http-equiv="Refresh">
         <title>Tienda Volkwik</title>
+                <link rel = "icon" href =  
+"./estilos/icons/volkwik.jpg" 
+        type = "image/*"> 
         <style>
             *{padding: 0;
               margin: 0;}

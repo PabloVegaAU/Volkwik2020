@@ -77,8 +77,8 @@ if ($accion == 'Registrar') {
                     <input class="inputR" id="telecli" name="telecli"  maxlength="9" minlength="7" placeholder="Telefono ó celular"required><br>
                     <label class="textR" >Usuario</label><br>
                     <input class="inputR"name="usercli"maxlength="20" minlength="5" placeholder="Usuario"required><br>
-                    <label class="textR">Contraseña</label><br>
-                    <input class="inputR" id="dnic" name="dnic"  maxlength="8" minlength="8" type="password" placeholder="Dni"required><br>
+                    <label class="textR">DNI</label><br>
+                    <input class="inputR" id="dnic" name="dnic"  maxlength="8" minlength="8" type="password" placeholder="Dni / Contraseña"required><br>
                     <input class="inputR" type="submit" name="accion"value="Registrar">
                 </form>
             </div>

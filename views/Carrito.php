@@ -29,6 +29,7 @@ $total = 0;
     </header>
     <body>
     <center>
+        <br><br><br>
         <div style="width: 70%">
             <table id="example" class="table table-hover">
                 <thead>
@@ -45,10 +46,10 @@ $total = 0;
                             $total += $product["Cantidad"] * $product["Precio"]
                             ?>
                             <tr>
-                                <td><?php echo $product["Nombre"]; ?></td>
+                                <td><?php echo $product["Nombre"];?></td>
                                 <td><?php echo $product["Categoria"]; ?></td>
-                                <td><?php echo $product["Precio"]; ?></td>
-                                <td><?php echo $product["Cantidad"]; ?></td>
+                                <td><?php echo $product["Precio"];?></td>
+                                <td><?php echo $product["Cantidad"];?></td>
                                 <td>
                                     <form action="Carrito.php" method="POST">
                                         <input  type="hidden"name="id" value="<?php echo $product["ID"]; ?>">
@@ -172,4 +173,5 @@ $total = 0;
         });
     </script>
 </body>
+
 </html>

@@ -16,14 +16,14 @@
                 <div class=" icon icon1">
                     <h5>Facebook</h5>
                     <label>
-                        <a href="http://m.me/106072794596268 " target="fb">
+                        <a href="https://www.facebook.com/messages/t/101624611719251" target="fb">
                             <img src="estilos/icons/fb.png"></a>
                     </label>
                 </div>
                 <div class=" icon icon2">
                     <h5>Whatsapp</h5>
                     <label>
-                        <a href="https://api.whatsapp.com/send?phone=+51980251512&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20" target="wtps">
+                        <a href="https://api.whatsapp.com/send?phone=+51994184990&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20" target="wtps">
                             <img src="estilos/icons/whatsapp.png">
                         </a>
                     </label>

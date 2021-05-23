@@ -220,7 +220,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Ventas</label>
+                                            <label>Pedidos</label>
                                             <input type="text" name="vpro"id="vpro" value="<?php echo $vpro ?>" class="form-control" readonly>
                                         </div>
                                         <div class="form-group">
@@ -246,7 +246,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                     <option value="No Semanal">No Semanal</option>
                                                 <?php } elseif ($spro == "No Semanal") { ?>
                                                     <option value="<?php echo $spro ?>"><?php echo $spro ?></option>
-                                                    <option value="Semanal">Habilitado</option>
+                                                    <option value="Semanal">Semanal</option>
                                                 <?php } else { ?>
                                                     <option value="Semanal">Semanal</option>
                                                     <option value="No Semanal">No Semanal</option>
@@ -286,8 +286,9 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <th>Categoria</th>
                                     <th>Precio Promo</th>
                                     <th>Estado Promo</th>
-                                    <th>Ventas</th>
-                                    <th>ESTADO</th> 
+                                    <th>Pedidos</th>
+                                    <th>ESTADO</th>
+                                    <th>Promo Semanal</th> 
                                     <th></th>                                   
                                 </tr>
                             </thead>
@@ -303,7 +304,8 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                         <td><?php echo $producto['PrecioP']; ?></td>
                                         <td><?php echo $producto['EnPromo']; ?></td>
                                         <td><?php echo $producto['Ventas']; ?></td>
-                                        <td><?php echo $producto['Estado']; ?></td>                                        
+                                        <td><?php echo $producto['Estado']; ?></td>           
+                                        <td><?php echo $producto['PromoSema']; ?></td>
                                         <td>
                                             <form action="" method="post">
                                                 <input type="hidden" name="idp" value="<?php echo $producto['IdProducto']; ?>">
@@ -316,6 +318,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                 <input type="hidden" name="epp"value="<?php echo $producto['EnPromo']; ?>">
                                                 <input type="hidden" name="vpro"value="<?php echo $producto['Ventas']; ?>">
                                                 <input type="hidden" name="epro"value="<?php echo $producto['Estado']; ?>">
+                                                <input type="hidden" name="spro"value="<?php echo $producto['PromoSema']; ?>">
                                                 <input type="submit" value="Elegir" name="accion" class="btn btn-warning" style="max-width: 80px">
                                             </form>
                                         </td>
@@ -332,8 +335,9 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <th>Categoria</th>
                                     <th>Precio Promo</th>
                                     <th>Estado Promo</th>
-                                    <th>Ventas</th>
+                                    <th>Pedidos</th>
                                     <th>ESTADO</th>    
+                                    <th>Promo Semanal</th> 
                                     <th></th>                                
                                 </tr>
                             </tfoot>

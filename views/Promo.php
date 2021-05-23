@@ -23,7 +23,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             }
             .boxC{
                 display: flex;
-                padding-left: 2%;
+                padding-left: 5%;
 
             }
             .boxC .listaC{
@@ -83,7 +83,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 /* IE6-9 fallback on horizontal gradient */
                 border-radius: 25px 25px 0 0;
             }
-            .Productos .card-head h2{padding-top:9px;font-size: 16px;width: 100%}
+            .Productos .card-head h2{padding-top: 10px;font-size: 14px;width: 120px;min-width:130px;max-height:30px}
             .Productos .card-logo {
                 border-radius: 50%;
                 height: 40px;
@@ -104,7 +104,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
             .Productos .card-body {
-                height: 100px;
+                height: 110px;
                 background: #fff;
                 border-radius: 0 0 25px 25px;
             }
@@ -115,7 +115,8 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 font-weight: 300;
                 color: white;
                 background: red;
-                padding: 2px 5px;
+                padding: 0px 5px;
+                margin-bottom: 5px;
                 border-radius: 4px;
                 top: -2px;
                 height: 24px;
@@ -125,10 +126,9 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 font-size: 16px;
                 font-weight: 300;
                 color: black;
-                padding: 2px 5px;
+                margin: -10px 0px 0px -120px;
                 border-radius: 4px;
-                top: -2px;
-                height: 24px;
+                height: 17px;
                 background: rgb(243,249,124);
                 background: -moz-linear-gradient(90deg, rgba(243,249,124,1) 21%, rgba(243,255,0,1) 48%, rgba(221,214,16,1) 76%, rgba(184,157,25,1) 95%);
                 background: -webkit-linear-gradient(90deg, rgba(243,249,124,1) 21%, rgba(243,255,0,1) 48%, rgba(221,214,16,1) 76%, rgba(184,157,25,1) 95%);
@@ -158,11 +158,11 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 background: #11e95b;
                 padding: 7px 8px;
                 text-align: center;
-                font-size: 20px;
+                font-size: 18px;
                 color: #000;
                 border-radius: 4px;
                 margin-top: -13px;
-                margin-left: -5px;
+                margin-left: -15px;
             }
 
             .Productos .product-priceP {
@@ -175,13 +175,13 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 color: #000;
                 border-radius:4px;
                 margin-top: -13px;
-                margin-left: -5px;
+                margin-left: -20px;
             }
 
             .Productos .pricesT{
                 display: flex;
                 justify-content: space-between;
-                padding: 0px 50px 0px 50px;
+                padding: 0px 40px 0px 40px;
 
             }
 
@@ -250,7 +250,7 @@ $listaProductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="hidden" name="catp" value="<?php echo $producto['Categoria']; ?>">
                                 <input type="hidden" name="prepp"value="<?php echo $producto['PrecioP']; ?>">
                                 <input type="submit"  class="badge" name="Agregar" value="Agregar al carrito">
-                                <input type="number" style="width: 40px" min="1" name="cant" value="0"pattern="^[0-9]+" onKeyPress='if (this.value.length == 2)
+                                <input type="number" style="width: 40px" min="1" max="<?php echo $producto['Stock']; ?>"  name="cant" value="0"pattern="^[0-9]+" onKeyPress='if (this.value.length == 2)
                                             return false;' />
                             </form>
                         </div>

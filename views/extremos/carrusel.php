@@ -12,9 +12,9 @@
         <div class="carrusel">
             <div class="Superior" style="display: flex;padding-left: 15%;" >
                 <button class="NP" onclick="plusDivs(-1)"><</button>
-                <img class="mySlides" src="https://htmlcolorcodes.com/assets/images/html-color-codes-color-palette-generators.jpg" >
-                <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShK-58zW0owXk76EcCmh7bIK3UCvN9-_A_aQ&usqp=CAU" >
-                <img class="mySlides" src="https://1.bp.blogspot.com/-VlXJEvJYApU/TcIwpp3uocI/AAAAAAAAAFU/s8pmB5zxjYs/s1600/azul.jpg">
+                <img class="mySlides" src="estilos/Promociones/promoAudifonos.png" >
+                <img class="mySlides" src="estilos/Promociones/smartPromo.jpg" >
+                <img class="mySlides" src="estilos/Promociones/MicroPromo.jpg">
                 <button class="NP" onclick="plusDivs(1)">></button>
             </div>
             <br>

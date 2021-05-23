@@ -10,6 +10,8 @@ if (!isset($_SESSION['cliente'])) {
     <head>
         <title>Mi Perfil Volkwik</title>
         <meta charset="UTF-8" http-equiv="Refresh">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>
         <style >
             .bodyF{
                 width: 60%;
@@ -83,5 +85,90 @@ if (!isset($_SESSION['cliente'])) {
                 </div>
             </div>
         </form>
+        <br><br>
+        <?php
+        $sentencia = $conn->prepare("SELECT * FROM `verpedidos` where IdCliente= :IdCliente");
+        $sentencia->bindParam(':IdCliente', $cliente['IdCliente']);
+        $sentencia->execute();
+        $CPedidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <center>
+<div style="width: 80%">
+    <h2>Lista de Pedidos Realizados</h2>
+    <br><br>
+        <table id="example" class="hover" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
+                    <th>Estado de mi Pedido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($CPedidos as $CliPe) { ?>
+                <tr>
+                    <td><?php echo $CliPe['Nombres']; ?></td>
+                    <td><?php echo $CliPe['Cantidad']; ?></td>
+                    <td><?php echo $CliPe['Precio']; ?></td>
+                    <td><?php echo $CliPe['Cantidad']*$CliPe['Precio']; ?></td>
+                    <td><?php echo $CliPe['Fecha']; ?></td>
+                    <td><?php echo $CliPe['Estado']; ?></td>
+                </tr>
+                <?php } ?>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
+                    <th>Estado de mi Pedido</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+        </center>
+        <br><br>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+
+                "language": {
+                    "sLengthMenu": "Mostrar _MENU_ Pedidos",
+                    "sInfo": "Mostrando pedidos (_TOTAL_)",
+                    "sInfoEmpty": "Mostrando los pedidos realizados",
+                    "sProcessing": "Cargando pedidos...",
+                    "sEmptyTable": "No has realizado Pedidos",
+                    "sSearch": "Buscar:",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Ultimo",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "pageLength": {
+                        "_": "Mostrar %d filas",
+                        "-1": "Mostrar Todo"
+                    }
+                }
+            });
+        });
+    </script>
     </body>
+
+    <br><br>
+    <footer>
+    <?php include './extremos/footer.php'?>
+</footer>
 </html>

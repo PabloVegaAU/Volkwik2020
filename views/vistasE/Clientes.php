@@ -83,21 +83,21 @@ switch ($accion) {
         header("location:");
         break;
     case "Eliminar":
-        $sentencia = $conn->prepare("SELECT Foto FROM producto WHERE IdProducto = :IdProducto");
-        $sentencia->bindParam(':IdProducto', $idp);
+        $sentencia = $conn->prepare("SELECT Foto FROM cliente WHERE IdCliente = :IdCliente");
+        $sentencia->bindParam(':IdCliente', $idc);
         $sentencia->execute();
-        $producto = $sentencia->fetch(PDO::FETCH_LAZY);
+        $cliente = $sentencia->fetch(PDO::FETCH_LAZY);
 
-        if (isset($producto["Foto"])) {
-            if (file_exists("FotosPro/" . $producto["Foto"])) {
-                if ($producto["Foto"] != "default.jpg") {
-                    unlink("FotosPro/" . $producto["Foto"]);
+        if (isset($cliente["Foto"])) {
+            if (file_exists("FotosCli/" . $cliente["Foto"])) {
+                if ($cliente["Foto"] != "default.jpg") {
+                    unlink("FotosCli/" . $cliente["Foto"]);
                 }
             }
         }
 
-        $sentencia = $conn->prepare("DELETE FROM producto WHERE IdProducto = :IdProducto");
-        $sentencia->bindParam(':IdProducto', $idp);
+        $sentencia = $conn->prepare("DELETE FROM cliente WHERE IdCliente = :IdCliente");
+        $sentencia->bindParam(':IdCliente', $idc);
         $sentencia->execute();
         header("location:");
 
@@ -138,7 +138,7 @@ $listaCliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Acciones Producto</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Acciones Cliente</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -213,14 +213,14 @@ $listaCliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <table id="example" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th hidden>ID</th>
                                     <th>Dni</th>
                                     <th>Usuario</th>
                                     <th>Nombres</th>
                                     <th>Direcciónn</th>
                                     <th>Telefono</th>
                                     <th>Correo Electronico</th>
-                                    <th>N° Compras</th>
+                                    <th>N° Pedidos</th>
                                     <th>Foto</th>      
                                     <th>Estado</th> 
                                     <th></th>
@@ -229,7 +229,7 @@ $listaCliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <tbody> 
                                 <?php foreach ($listaCliente as $cliente) { ?>
                                     <tr>
-                                        <td><?php echo $cliente['IdCliente']; ?></td>                                      
+                                        <td hidden><?php echo $cliente['IdCliente']; ?></td>                                      
                                         <td><?php echo $cliente['Dni']; ?></td>
                                         <td><?php echo $cliente['User']; ?></td>
                                         <td><?php echo $cliente['Nombres']; ?></td>
@@ -259,14 +259,14 @@ $listaCliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
+                                    <th hidden>ID</th>
                                     <th>Dni</th>
                                     <th>Usuario</th>
                                     <th>Nombres</th>
                                     <th>Direcciónn</th>
                                     <th>Telefono</th>
                                     <th>Correo Electronico</th>
-                                    <th>N° Compras</th>
+                                    <th>N° Pedidos</th>
                                     <th>Foto</th>      
                                     <th>Estado</th> 
                                     <th></th>

@@ -26,12 +26,12 @@ $Cliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </head>
     <style>
         .headerC .right {
-            margin-right: 340px;
+            margin-right: 310px;
         }
         .headerC #loginBox {
             position: absolute;
             margin-top: 5px;
-            margin-left: -125px;
+            margin-left: -170px;
             display:none;
             z-index:29;
         }
@@ -96,7 +96,7 @@ $Cliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                             <a class="dropdown-item" style="font-size: 16px"><?php echo $cliente['Correo']; ?></a>
                                                         <?php } ?><br><br>
                                                         <div class="dropdown-divider">
-                                                            <button type="submit" class="tagb" value="Salir" name="accion">Salir</button>
+                                                            <button type="submit" class="tagb dropdown-item" value="Salir" name="accion">Salir</button>
                                                         </div>
                                                     </fieldset>
                                                 </fieldset>
